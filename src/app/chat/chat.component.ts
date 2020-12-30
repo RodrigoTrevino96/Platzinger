@@ -13,6 +13,8 @@ export class ChatComponent implements OnInit {
   friendId?: number;
   friends: User[];
   friend: User;
+  price: number = 12.348290348203;
+  today: any = Date.now();
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -22,13 +24,13 @@ export class ChatComponent implements OnInit {
     this.friendId = this.activatedRoute.snapshot.params['id'];
     console.log('friend id:', this.friendId);
     this.friends = this.userService.getFriends();
-    
-    
-    
+
+
+
     this.friend = this.friends.find(record => {
       return record.id == this.friendId
     })!;
-    
+
     console.log('Chatting with', this.friend.nick);
     console.log('Usuario', this.friend);
   }
