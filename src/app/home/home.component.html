@@ -1,0 +1,18 @@
+<br/>
+<b>Amigos</b>
+<ng-container *ngFor="let user of friends; let i = index">
+    <div>
+        <a *ngIf="user.isFriend" routerLink="/chat/{{user.id}}">
+            {{i}}. {{user.nick}} | {{user.email}}
+        </a>
+    </div>
+</ng-container>
+
+<b>No Amigos</b>
+<ng-container *ngFor="let user of friends; let i = index">
+    <div>
+        <a *ngIf="!user.isFriend" routerLink="/chat/{{user.id}}">
+            {{i}}. {{user.nick}} | {{user.email}}
+        </a>
+    </div>
+</ng-container>

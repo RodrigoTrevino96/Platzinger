@@ -3,16 +3,38 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { ChatComponent } from './chat/chat.component';
+import { ProfileComponent } from './profile/profile.component';
+
+//declarar rutas
+import { RouterModule, Routes } from "@angular/router";
+import { MenuComponent } from './menu/menu.component';
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'chat/:id', component: ChatComponent },
+  { path: 'profile', component: ProfileComponent },
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    ChatComponent,
+    ProfileComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
+  // bootstrap: [LoginComponent]
 })
 export class AppModule { }
