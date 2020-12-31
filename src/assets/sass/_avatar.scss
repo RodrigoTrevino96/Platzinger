@@ -1,0 +1,36 @@
+.avatar-frame {
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid white;
+    display: inline-block;
+    &--offline {
+        background: rgb(255, 255, 255);
+        background: -moz-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(219, 219, 219, 0) 100%);
+        background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(219, 219, 219, 0) 100%);
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(219, 219, 219, 0) 100%);
+        box-shadow: 1px 5px 4px 0px rgba(0, 0, 0, .5);
+    }
+    &--online {
+        background: rgb(101, 255, 106);
+        background: -moz-linear-gradient(0deg, rgba(101, 255, 106, 1) 0%, rgba(219, 219, 219, 0) 100%);
+        background: -webkit-linear-gradient(0deg, rgba(101, 255, 106, 1) 0%, rgba(219, 219, 219, 0) 100%);
+        background: linear-gradient(0deg, rgba(101, 255, 106, 1) 0%, rgba(219, 219, 219, 0) 100%);
+        box-shadow: 1px 5px 4px 0px rgba(0, 0, 0, .5);
+    }
+    &--busy {
+        background: rgb(255, 58, 48);
+        background: -moz-linear-gradient(0deg, rgba(255, 58, 48, 1) 0%, rgba(219, 219, 219, 0) 100%);
+        background: -webkit-linear-gradient(0deg, rgba(255, 58, 48, 1) 0%, rgba(219, 219, 219, 0) 100%);
+        background: linear-gradient(0deg, rgba(255, 58, 48, 1) 0%, rgba(219, 219, 219, 0) 100%);
+    }
+    &--away {
+        background: rgb(255, 152, 48);
+        background: -moz-linear-gradient(0deg, rgba(255, 152, 48, 1) 0%, rgba(219, 219, 219, 0) 100%);
+        background: -webkit-linear-gradient(0deg, rgba(255, 152, 48, 1) 0%, rgba(219, 219, 219, 0) 100%);
+        background: linear-gradient(0deg, rgba(255, 152, 48, 1) 0%, rgba(219, 219, 219, 0) 100%);
+    }
+    img {
+        max-width: 100px;
+    }
+}

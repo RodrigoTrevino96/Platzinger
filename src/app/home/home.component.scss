@@ -1,3 +1,28 @@
-.friend-status {
+.friend-status,
+img.icon {
     width: 25px;
+}
+
+.friend-status {
+    margin-right: .75rem;
+}
+
+img.icon {
+    cursor: pointer;
+}
+
+.home {
+    &__header {
+        background-image: url(../../assets/img/msnbg.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    &__body {
+        padding: 15px;
+        background-color: #f3ffff;
+    }
+}
+
+hr {
+    margin-top: 0;
 }
