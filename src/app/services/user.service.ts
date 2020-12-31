@@ -15,7 +15,8 @@ export class UserService {
       age: 24,
       email: 'email0@email.com',
       isFriend: true,
-      id: 0
+      id: 0,
+      status: "online"
     };
 
     let user1: User = {
@@ -24,7 +25,8 @@ export class UserService {
       age: 24,
       email: 'email1@email.com',
       isFriend: false,
-      id: 1
+      id: 1,
+      status: "busy"
     };
 
     let user2: User = {
@@ -33,7 +35,8 @@ export class UserService {
       age: 25,
       email: 'email2@email.com',
       isFriend: true,
-      id: 2
+      id: 2,
+      status: "away"
     };
 
     let user3: User = {
@@ -42,7 +45,8 @@ export class UserService {
       age: 26,
       email: 'email3@email.com',
       isFriend: false,
-      id: 3
+      id: 3,
+      status: "offline"
     };
     this.friends = [myUser, user1, user2, user3]
 

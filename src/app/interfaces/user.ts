@@ -5,4 +5,5 @@ export interface User {
     email: string;
     isFriend: boolean;
     id: any;
+    status: string
 }
