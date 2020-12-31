@@ -1,3 +1,4 @@
+@import "assets/sass/variables";
 .avatar-frame-offline {
     background: rgb(255, 255, 255);
     background: -moz-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(219, 219, 219, 0) 100%);
@@ -13,4 +14,8 @@
 
 .center {
     text-align: center !important;
+}
+
+.navbar-height {
+    margin-top: $navbar-height;
 }
