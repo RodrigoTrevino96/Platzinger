@@ -4,6 +4,7 @@
     border-radius: 10px;
     border: 1px solid white;
     display: inline-block;
+    margin: 0 auto;
     &--offline {
         background: rgb(255, 255, 255);
         background: -moz-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(219, 219, 219, 0) 100%);
