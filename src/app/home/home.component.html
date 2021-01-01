@@ -1,52 +1,54 @@
-<div class="container home">
-    <div class="home__header">
-        <div class="row m-3">
+<div class="container-background">
+    <div class="container home">
+        <div class="home__header">
+            <div class="row m-3">
 
-            <div class="col-md-auto mb-3">
-                <div class="avatar-frame avatar-frame--online">
-                    <img src="../../assets/img/generic_avatar.png" alt="" class="img-fluid avatar-image">
+                <div class="col-md-auto mb-3">
+                    <div class="avatar-frame avatar-frame--online">
+                        <img src="../../assets/img/generic_avatar.png" alt="" class="img-fluid avatar-image">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <b>Yo</b>
+                    <div>
+                        <span>Online</span>
+                        <br>
+                        <small><i>< Escribe un mensaje personal ></i></small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="home__body">
+
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Buscar" [(ngModel)]="query">
+                </div>
+                <div class="col-md-auto">
+                    <img src="../../assets/img/logo_live_add.png" class="icon" alt="Add Friend">
                 </div>
             </div>
 
-            <div class="col">
-                <b>Yo</b>
-                <div>
-                    <span>Online</span>
-                    <br>
-                    <small><i>< Escribe un mensaje personal ></i></small>
+            <div class="row my-3">
+                <div class="col-12">
+                    <h4>Amigos {{friends.length}}/{{friends.length}}</h4>
                 </div>
             </div>
 
-        </div>
-    </div>
+            <hr>
 
-    <div class="home__body">
-
-        <div class="row">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Buscar" [(ngModel)]="query">
-            </div>
-            <div class="col-md-auto">
-                <img src="../../assets/img/logo_live_add.png" class="icon" alt="Add Friend">
-            </div>
-        </div>
-
-        <div class="row my-3">
-            <div class="col-12">
-                <h4>Amigos {{friends.length}}/{{friends.length}}</h4>
-            </div>
-        </div>
-
-        <hr>
-
-        <div *ngFor="let user of friends | search:query; let i = index">
-            <img src="../../assets/img/logo_live_{{user.status}}.png" alt="friend {{user.status}}" class="friend-status">
-            <span routerLink="/chat/{{user.id}}">
+            <div *ngFor="let user of friends | search:query; let i = index">
+                <img src="../../assets/img/logo_live_{{user.status}}.png" alt="friend {{user.status}}" class="friend-status">
+                <span routerLink="/chat/{{user.id}}">
                 <b>{{user.nick}} </b>
                 - {{user.subNick}}
                 <small>{{user.email}}</small>
             </span>
-        </div>
+            </div>
 
+        </div>
     </div>
 </div>
