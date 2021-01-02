@@ -1,3 +1,3 @@
-<app-menu></app-menu>
-<div class="navbar-height"></div>
+<app-menu *ngIf="router.url != '/login'"></app-menu>
+<div [ngClass]="{'navbar-height': router.url != '/login'}"></div>
 <router-outlet></router-outlet>
