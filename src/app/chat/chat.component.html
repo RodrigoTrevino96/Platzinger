@@ -12,22 +12,20 @@
 
             <div class="col-8 chat__text">
                 <div class="chat__text__header">
-                    <span> <h5>{{friend.nick}}</h5><small>{{friend.status}}</small></span>
+                    <span> <b>{{friend.nick}}</b> | <small>{{friend.status}}</small></span>
                 </div>
                 <hr>
                 <div class="chat__text__body chat__text__body--they ">
-                    <p>{{friend.nick}} envía</p>
-                    <p>{{friend | json}}</p>
-                    <p>{{price}}</p>
-                    <p>{{price | number:'1.5-5'}}</p>
-                    <p>{{today | date: 'full'}}</p>
+                    <p class="bubble bubble--they">{{friend | json}}</p>
+                    <p class="bubble bubble--they">{{price}}</p>
+                    <p class="bubble bubble--they">{{price | number:'1.5-5'}}</p>
+                    <p class="bubble bubble--they">{{today | date: 'full'}}</p>
                 </div>
                 <div class="chat__text__body chat__text__body--me">
-                    <p>{{friend.nick}} envía</p>
-                    <p>{{friend | json}}</p>
-                    <p>{{price}}</p>
-                    <p>{{price | number:'1.5-5'}}</p>
-                    <p>{{today | date: 'full'}}</p>
+                    <p class="bubble bubble--me">{{friend | json}}</p>
+                    <p class="bubble bubble--me">{{price}}</p>
+                    <p class="bubble bubble--me">{{price | number:'1.5-5'}}</p>
+                    <p class="bubble bubble--me">{{today | date: 'full'}}</p>
                 </div>
                 <div class="chat__text__footer">
                     <input type="text" class="send form-control">
