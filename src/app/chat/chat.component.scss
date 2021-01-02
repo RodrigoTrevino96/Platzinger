@@ -1,0 +1,33 @@
+@import "../../assets/sass/variables";
+.chat {
+    padding: 1rem 0;
+    &__avatar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        margin-top: .75rem;
+        &__header {}
+        &__body {
+            display: flex;
+            flex-direction: column;
+            &--they {
+                align-items: flex-start;
+                text-align: start;
+            }
+            &--me {
+                align-items: flex-end;
+                text-align: end;
+            }
+        }
+        &__footer {
+            .send {
+                margin-top: .75rem;
+            }
+        }
+    }
+}

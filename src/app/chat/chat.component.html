@@ -1,7 +1,40 @@
-<p>{{friend | json}}</p>
-<p>{{price}}</p>
-<p>{{price | number:'1.5-5'}}</p>
-<p>{{today | date: 'full'}}</p>
-<i>
-    Angular Pipes check <a href="https://angular.io/api/common/DatePipe" target="_blank">here</a>
-</i>
+<div class="container-background">
+    <div class="container">
+        <div class="row chat">
+            <div class="col-3 chat__avatar">
+                <div class="avatar-frame avatar-frame--online">
+                    <img src="../../assets/img/generic_avatar.png" alt="">
+                </div>
+                <div class="avatar-frame avatar-frame--online">
+                    <img src="../../assets/img/generic_avatar.png" alt="">
+                </div>
+            </div>
+
+            <div class="col-8 chat__text">
+                <div class="chat__text__header">
+                    <span> <h5>{{friend.nick}}</h5><small>{{friend.status}}</small></span>
+                </div>
+                <hr>
+                <div class="chat__text__body chat__text__body--they ">
+                    <p>{{friend.nick}} envía</p>
+                    <p>{{friend | json}}</p>
+                    <p>{{price}}</p>
+                    <p>{{price | number:'1.5-5'}}</p>
+                    <p>{{today | date: 'full'}}</p>
+                </div>
+                <div class="chat__text__body chat__text__body--me">
+                    <p>{{friend.nick}} envía</p>
+                    <p>{{friend | json}}</p>
+                    <p>{{price}}</p>
+                    <p>{{price | number:'1.5-5'}}</p>
+                    <p>{{today | date: 'full'}}</p>
+                </div>
+                <div class="chat__text__footer">
+                    <input type="text" class="send form-control">
+                    <a class="btn btn-primary btn-block send">Enviar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
