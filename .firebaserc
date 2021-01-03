@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "platzinger-f250a": {
+      "hosting": {
+        "platzinger": [
+          "platzinger-f250a"
+        ]
+      }
+    }
+  }
+}
