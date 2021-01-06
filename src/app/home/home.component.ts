@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "../interfaces/user";
+import { AuthenticationService } from '../services/authentication.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -12,7 +13,9 @@ export class HomeComponent implements OnInit {
   friends: User[];
   query: string = '';
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService,
+    private authenticationService: AuthenticationService) {
     console.clear();
     console.log('Home');
     this.userService
@@ -30,4 +33,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logOut() {
+    this.authenticationService.logOut();
+  }
 }

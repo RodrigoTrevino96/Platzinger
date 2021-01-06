@@ -1,5 +1,7 @@
+import { Route } from '@angular/compiler/src/core';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import firebase from "../../../node_modules/firebase";
 // import { firebase } from "firebase/app";
 
@@ -9,7 +11,10 @@ import firebase from "../../../node_modules/firebase";
 })
 
 export class AuthenticationService {
-  constructor(private angularFireAuth: AngularFireAuth) { }
+  constructor(
+    private angularFireAuth: AngularFireAuth,
+    private router: Router
+  ) { }
   fbProvider = new firebase.auth.FacebookAuthProvider();
 
   loginWithEmail(email: string, password: string) {
@@ -38,6 +43,14 @@ export class AuthenticationService {
   }
 
   logOut() {
-    return this.angularFireAuth.signOut();
+    return this.angularFireAuth
+      .signOut()
+      .then(() => {
+        alert('Sesión finalizada');
+        this.router.navigate(['login']);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 }
