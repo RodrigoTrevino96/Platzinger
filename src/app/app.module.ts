@@ -21,6 +21,7 @@ import { AngularFireAnalyticsModule } from "@angular/fire/analytics";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireModule } from "@angular/fire";
 import { environment } from "../environments/environment";
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireDatabaseModule
   ],
   providers: [AngularFirestoreModule],
   bootstrap: [AppComponent]

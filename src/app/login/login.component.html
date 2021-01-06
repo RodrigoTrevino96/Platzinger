@@ -16,8 +16,8 @@
                         <small *ngIf="operation=='register'">¿Ya tienes cuenta? Has <a (click)="operation = 'login'">Login</a></small>
                         <small *ngIf="operation=='login'">¿Aún no tienes cuenta? <a (click)="operation = 'register'">Registrarme</a></small>
                         <div class="">
-                            <input [(ngModel)]="email" type="email" class="form-control mt-2" placeholder="Correo" *ngIf="operation=='register'">
-                            <input type="text" class="form-control mt-2" placeholder="Mi Nick" *ngIf="operation=='login'">
+                            <input [(ngModel)]="email" type="email" class="form-control mt-2" placeholder="Correo">
+                            <input [(ngModel)]="nick" type="text" class="form-control mt-2" placeholder="Mi Nick" *ngIf="operation=='register'">
                             <input [(ngModel)]="password" type="password" class="form-control mt-2" placeholder="**********">
                         </div>
                         <div class="center mt-3">

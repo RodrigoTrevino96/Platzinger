@@ -10,8 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class ChatComponent implements OnInit {
 
-  friendId?: number;
-  friends: User[];
+  friendId: any;
   friend: User;
   price: number = 12.348290348203;
   today: any = Date.now();
@@ -23,15 +22,20 @@ export class ChatComponent implements OnInit {
     console.clear();
     this.friendId = this.activatedRoute.snapshot.params['id'];
     console.log('friend id:', this.friendId);
-    this.friends = this.userService.getFriends();
 
+    this.userService
+      .getUserByID(this.friendId)
+      .valueChanges()
+      .subscribe(
+        (data) => {
+          this.friend = data;
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
 
-
-    this.friend = this.friends.find(record => {
-      return record.id == this.friendId
-    })!;
-
-    console.log('Chatting with', this.friend.nick);
+    // console.log('Chatting with', this.friend.nick);
     console.log('Usuario', this.friend);
   }
 
