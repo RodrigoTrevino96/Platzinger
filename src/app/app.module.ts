@@ -16,6 +16,11 @@ import { MenuComponent } from './menu/menu.component';
 import { SearchPipe } from "./pipes/search";
 import { FormsModule } from '@angular/forms';
 
+// Firebase
+import { AngularFireAnalyticsModule } from "@angular/fire/analytics";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "../environments/environment";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,7 +44,10 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

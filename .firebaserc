@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "platzinger-v0": {
+      "hosting": {
+        "platzinger": [
+          "platzinger-v0"
+        ]
+      }
+    }
+  }
+}
