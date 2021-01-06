@@ -49,7 +49,7 @@ const appRoutes: Routes = [
     AngularFireAnalyticsModule,
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [AngularFirestoreModule],
   bootstrap: [AppComponent]
   // bootstrap: [LoginComponent]
 })
