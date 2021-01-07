@@ -9,8 +9,8 @@
                     </div>
                 </div>
 
-                <div class="col">
-                    <b>Yo</b>
+                <div class="col" *ngIf="currentUser">
+                    <b>{{currentUser.nick}}</b> - <em>{{currentUser.subnick}}</em>
                     <div>
                         <span>Online</span>
                         <br>

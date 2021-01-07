@@ -10,29 +10,26 @@
                 <span>Cambiar foto</span>
                 <label class="custome-file-upload">
                     <input type="file">
-                    <a class="btn btn-primary btn-block">
-
-                        Subir Avatar
-                    </a>
+                    <a class="btn btn-primary btn-block">Subir Avatar</a>
                 </label>
             </div>
 
-            <div class="col-md-9 mt-3">
-                <div>
-                    <label for="" fixed>Nick</label>
-                    <input type="text" class="form-control">
+            <div class="col-md-9 mt-3" *ngIf="user">
+                <div class="form-group">
+                    <label for="txtNick" fixed>Nick</label>
+                    <input [(ngModel)]="user.nick" type="text" class="form-control" id="txtNick">
                 </div>
-                <div>
-                    <label for="" fixed>SubNick</label>
-                    <input type="text" class="form-control">
+                <div class="form-group">
+                    <label for="txtSubnick" fixed>SubNick</label>
+                    <input [(ngModel)]="user.subnick" type="text" class="form-control" id="txtSubnick">
                 </div>
-                <div>
-                    <label for="" fixed>Email</label>
-                    <input type="email" class="form-control" disabled>
+                <div class="form-group">
+                    <label for="txtEmail" fixed>Email</label>
+                    <input [(ngModel)]="user.email" type="email" class="form-control" id="txtEmail" disabled>
                 </div>
-                <div>
-                    <label for="" fixed>Status</label>
-                    <select class="form-control">
+                <div class="form-group">
+                    <label for="slctStatus" fixed>Status</label>
+                    <select class="form-control" id="slctStatus">
                         <option value="0">Online</option>
                         <option value="1">Busy</option>
                         <option value="2">Away</option>
@@ -40,7 +37,7 @@
                     </select>
                 </div>
                 <hr>
-                <a class="btn btn-primary btn-block">Guardar</a>
+                <a (click)="saveSettings()" class="btn btn-primary btn-block">Guardar</a>
 
             </div>
 

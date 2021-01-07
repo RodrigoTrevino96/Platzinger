@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   friends: User[];
   query: string = '';
+  currentUser: User;
   catBreed: string = "abys";
   cat: Cat;
 
@@ -28,7 +29,9 @@ export class HomeComponent implements OnInit {
       .valueChanges()
       .subscribe(
         (data: User[]) => {
+          this.currentUser = data[data.length - 1];
           this.friends = data;
+          console.log("List of friends",this.friends)
         }, (error) => {
           console.log("error suscribe", console.log(error))
         }
