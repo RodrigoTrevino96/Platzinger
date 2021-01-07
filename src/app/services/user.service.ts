@@ -12,15 +12,15 @@ export class UserService {
     return this.angularFireDatabase.list('/users');
   }
 
-  getUserByID(id) {
+  getUserByID(id: any) {
     return this.angularFireDatabase.object(`/users/${id}`);
   }
 
-  createUser(user) {
+  createUser(user: any) {
     return this.angularFireDatabase.object(`/users/${user.id}`).set(user);
   }
 
-  editUser(user) {
+  editUser(user: any) {
     return this.angularFireDatabase.object(`/users/${user.id}`).set(user);
   }
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Cat } from '../interfaces/cat';
 import { User } from "../interfaces/user";
 import { AuthenticationService } from '../services/authentication.service';
+import { BackendService } from '../services/backend.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -12,10 +14,13 @@ export class HomeComponent implements OnInit {
 
   friends: User[];
   query: string = '';
+  catBreed: string = "abys";
+  cat: Cat;
 
   constructor(
     private userService: UserService,
-    private authenticationService: AuthenticationService) {
+    private authenticationService: AuthenticationService,
+    private gatitos: BackendService) {
     console.clear();
     console.log('Home');
     this.userService
@@ -35,5 +40,19 @@ export class HomeComponent implements OnInit {
 
   logOut() {
     this.authenticationService.logOut();
+  }
+
+  getGatito() {
+    console.log('Home Component', this.catBreed);
+    this.gatitos
+      .getImageCatBreed(this.catBreed)
+      .subscribe(
+        (data: any) => {
+          this.cat = data[0];
+          console.log('--Subscribe getGatito() HOME', data[0]);
+        },
+        (error: any) => {
+          console.log(error);
+        })
   }
 }

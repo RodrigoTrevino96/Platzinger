@@ -24,6 +24,9 @@ import { environment } from "../environments/environment";
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AuthenticationGuard } from './services/authentication.guard';
 
+// HTTP
+import { HttpClientModule } from "@angular/common/http";
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthenticationGuard]  },
   { path: 'home', component: HomeComponent, canActivate: [AuthenticationGuard] },
@@ -50,7 +53,8 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule
   ],
   providers: [AngularFirestoreModule],
   bootstrap: [AppComponent]

@@ -14,7 +14,7 @@
                     <div>
                         <span>Online</span>
                         <br>
-                        <small><i>< Escribe un mensaje personal ></i></small>
+                        <small><i>- Escribe un mensaje personal -</i></small>
                         <a class="btn btn-danger" (click)="logOut()">Salir</a>
                     </div>
                 </div>
@@ -41,13 +41,58 @@
 
             <hr>
 
-            <div *ngFor="let user of friends | search:query; let i = index">
-                <img src="../../assets/img/logo_live_{{user.status}}.png" alt="friend {{user.status}}" class="friend-status">
-                <span routerLink="/chat/{{user.id}}">
-                <b>{{user.nick}} </b>
-                - {{user.subNick}}
-                <small>{{user.email}}</small>
-            </span>
+            <div class="row">
+                <div class="col-4">
+                    <div *ngFor="let user of friends | search:query; let i = index">
+                        <img src="../../assets/img/logo_live_{{user.status}}.png" alt="friend {{user.status}}" class="friend-status">
+                        <span routerLink="/chat/{{user.id}}">
+                        <b>{{user.nick}} </b>
+                        - {{user.subNick}}
+                        <small>{{user.email}}</small>
+                    </span>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <a class="btn btn-primary" (click)="getGatito() ">gatitos</a>
+                        </div>
+                        <div class="col-6" *ngIf="cat">
+                            <img src="{{cat.url}}" alt="{{cat.breeds[0].name}} cat" class="w-100">
+                        </div>
+
+                        <div class="col-6" *ngIf="cat">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <strong class="mr-2"><i class="mr-2 fas fa-cat"></i> Nombre</strong>
+                                    <label>{{cat.breeds[0].name}}</label>
+                                </li>
+                                <li>
+                                    <strong class="mr-2"><i class="mr-2 fas fa-flag"></i>Origen</strong>
+                                    <label>{{cat.breeds[0].origin}}</label>
+                                </li>
+                                <li>
+                                    <strong class="mr-2"><i class="mr-2 fas fa-smile-wink"></i>Temperamento</strong>
+                                    <label>{{cat.breeds[0].temperament}}</label>
+                                </li>
+                                <li>
+                                    <strong class="mr-2"><i class="mr-2 fas fa-comment-dots"></i>Descripción</strong>
+                                    <label>{{cat.breeds[0].description}}</label>
+                                </li>
+                                <li>
+                                    <strong class="mr-2"><i class="mr-2 fas fa-heartbeat"></i>Lifespan</strong>
+                                    <label>{{cat.breeds[0].life_span}}</label>
+                                </li>
+                                <li>
+                                    <strong class="mr-2"><i class="mr-2 fas fa-balance-scale-right"></i>Peso Promedio</strong>
+                                    <label>{{cat.breeds[0].weight.metric}}</label>
+                                </li>
+                            </ul>
+                            <a href="{{cat.breeds[0].wikipedia_url}}">{{cat.breeds[0].wikipedia_url}}</a>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
         </div>
