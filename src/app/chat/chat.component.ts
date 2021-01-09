@@ -11,7 +11,7 @@ import { UserService } from '../services/user.service';
 export class ChatComponent implements OnInit {
 
   friendId: any;
-  friend: User;
+  friend!: User;
   price: number = 12.348290348203;
   today: any = Date.now();
 
@@ -27,7 +27,7 @@ export class ChatComponent implements OnInit {
       .getUserByID(this.friendId)
       .valueChanges()
       .subscribe(
-        (data) => {
+        (data: any) => {
           this.friend = data;
         },
         (error) => {

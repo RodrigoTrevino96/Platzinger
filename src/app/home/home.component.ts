@@ -12,11 +12,11 @@ import { UserService } from '../services/user.service';
 })
 export class HomeComponent implements OnInit {
 
-  friends: User[];
+  friends!: User[];
   query: string = '';
-  currentUser: User;
+  currentUser!: User;
   catBreed: string = "abys";
-  cat: Cat;
+  cat!: Cat;
 
   constructor(
     private userService: UserService,

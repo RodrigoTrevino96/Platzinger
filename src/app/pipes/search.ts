@@ -16,7 +16,7 @@ export class SearchPipe implements PipeTransform {
 
         args = args.toLocaleLowerCase();
 
-        return value.filter(item => {
+        return value.filter((item: any) => {
             return JSON.stringify(item).toLocaleLowerCase().includes(args); //toma un string y checa si incluye la palabra incluida en args
         });
     }

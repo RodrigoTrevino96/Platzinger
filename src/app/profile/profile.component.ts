@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { stat } from 'fs';
 import { User } from '../interfaces/user';
 import { AuthenticationService } from '../services/authentication.service';
 import { UserService } from '../services/user.service';
@@ -11,13 +10,13 @@ import { UserService } from '../services/user.service';
 })
 export class ProfileComponent implements OnInit {
 
-  user: User;
+  user!: User;
 
   constructor(private userService: UserService, private autheticationService: AuthenticationService) {
 
     this.autheticationService
       .getStatus()
-      .subscribe((status) => {
+      .subscribe((status: any) => {
         this.userService
           .getUserByID(status.uid)
           .valueChanges()
