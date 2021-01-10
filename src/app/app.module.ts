@@ -23,12 +23,16 @@ import { AngularFireModule } from "@angular/fire";
 import { environment } from "../environments/environment";
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AuthenticationGuard } from './services/authentication.guard';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 // HTTP
 import { HttpClientModule } from "@angular/common/http";
 
+// Angular Image Cropper
+import { ImageCropperModule } from "ngx-image-cropper";
+
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthenticationGuard]  },
+  { path: '', component: HomeComponent, canActivate: [AuthenticationGuard] },
   { path: 'home', component: HomeComponent, canActivate: [AuthenticationGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'chat/:id', component: ChatComponent, canActivate: [AuthenticationGuard] },
@@ -54,7 +58,9 @@ const appRoutes: Routes = [
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    HttpClientModule
+    HttpClientModule,
+    ImageCropperModule,
+    AngularFireStorageModule,
   ],
   providers: [AngularFirestoreModule],
   bootstrap: [AppComponent]

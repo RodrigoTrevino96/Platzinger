@@ -4,17 +4,19 @@
 
             <div class="col-md-3 d-flex flex-column">
                 <div class="avatar-frame avatar-frame--online mt-3">
-                    <img src="../../assets/img/generic_avatar.png" alt="" class="avatarImage img-fluid">
+                    <img *ngIf="user" [src]="croppedImage || user.avatar || '../../assets/img/generic_avatar.png'" alt="" class="avatarImage img-fluid">
                 </div>
                 <hr>
                 <span>Cambiar foto</span>
                 <label class="custome-file-upload">
-                    <input type="file">
+                    <input type="file" (change)="fileChangeEvent($event)">
                     <a class="btn btn-primary btn-block">Subir Avatar</a>
                 </label>
             </div>
 
             <div class="col-md-9 mt-3" *ngIf="user">
+                <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1 / 1" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+
                 <div class="form-group">
                     <label for="txtNick" fixed>Nick</label>
                     <input [(ngModel)]="user.nick" type="text" class="form-control" id="txtNick">

@@ -5,90 +5,90 @@
 
                 <div class="col-md-auto mb-3">
                     <div class="avatar-frame avatar-frame--online">
-                        <img src="../../assets/img/generic_avatar.png" alt="" class="img-fluid avatar-image">
+                        <img *ngIf="currentUser" [src]="currentUser.avatar||'../../assets/img/generic_avatar.png'" alt="" class="img-fluid avatar-image ">
                     </div>
                 </div>
 
-                <div class="col" *ngIf="currentUser">
+                <div class="col " *ngIf="currentUser ">
                     <b>{{currentUser.nick}}</b> - <em>{{currentUser.subnick}}</em>
                     <div>
                         <span>Online</span>
                         <br>
                         <small><i>- Escribe un mensaje personal -</i></small>
-                        <a class="btn btn-danger" (click)="logOut()">Salir</a>
+                        <a class="btn btn-danger " (click)="logOut() ">Salir</a>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <div class="home__body">
+        <div class="home__body ">
 
-            <div class="row">
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Buscar" [(ngModel)]="query">
+            <div class="row ">
+                <div class="col ">
+                    <input type="text " class="form-control " placeholder="Buscar " [(ngModel)]="query ">
                 </div>
-                <div class="col-md-auto">
-                    <img src="../../assets/img/logo_live_add.png" class="icon" alt="Add Friend">
+                <div class="col-md-auto ">
+                    <img src="../../assets/img/logo_live_add.png " class="icon " alt="Add Friend ">
                 </div>
             </div>
 
-            <div class="row my-3">
-                <div class="col-12">
-                    <h4 *ngIf="friends">Amigos {{friends.length}}/{{friends.length}}</h4>
+            <div class="row my-3 ">
+                <div class="col-12 ">
+                    <h4 *ngIf="friends ">Amigos {{friends.length}}/{{friends.length}}</h4>
                 </div>
             </div>
 
             <hr>
 
-            <div class="row">
-                <div class="col-4">
-                    <div *ngFor="let user of friends | search:query; let i = index">
-                        <img src="../../assets/img/logo_live_{{user.status}}.png" alt="friend {{user.status}}" class="friend-status">
-                        <span routerLink="/chat/{{user.id}}">
+            <div class="row ">
+                <div class="col-4 ">
+                    <div *ngFor="let user of friends | search:query; let i=i ndex ">
+                        <img src="../../assets/img/logo_live_{{user.status}}.png " alt="friend {{user.status}} " class="friend-status ">
+                        <span routerLink="/chat/{{user.id}} ">
                         <b>{{user.nick}} </b>
                         - {{user.subNick}}
                         <small>{{user.email}}</small>
                     </span>
                     </div>
                 </div>
-                <div class="col-8">
-                    <div class="row">
-                        <div class="col-12 mb-4">
-                            <a class="btn btn-primary" (click)="getGatito() ">gatitos</a>
+                <div class="col-8 ">
+                    <div class="row ">
+                        <div class="col-12 mb-4 ">
+                            <a class="btn btn-primary " (click)="getGatito() ">gatitos</a>
                         </div>
-                        <div class="col-6" *ngIf="cat">
-                            <img src="{{cat.url}}" alt="{{cat.breeds[0].name}} cat" class="w-100">
+                        <div class="col-6 " *ngIf="cat ">
+                            <img src="{{cat.url}} " alt="{{cat.breeds[0].name}} cat " class="w-100 ">
                         </div>
 
-                        <div class="col-6" *ngIf="cat">
-                            <ul class="list-unstyled">
+                        <div class="col-6 " *ngIf="cat ">
+                            <ul class="list-unstyled ">
                                 <li>
-                                    <strong class="mr-2"><i class="mr-2 fas fa-cat"></i> Nombre</strong>
+                                    <strong class="mr-2 "><i class="mr-2 fas fa-cat "></i> Nombre</strong>
                                     <label>{{cat.breeds[0].name}}</label>
                                 </li>
                                 <li>
-                                    <strong class="mr-2"><i class="mr-2 fas fa-flag"></i>Origen</strong>
+                                    <strong class="mr-2 "><i class="mr-2 fas fa-flag "></i>Origen</strong>
                                     <label>{{cat.breeds[0].origin}}</label>
                                 </li>
                                 <li>
-                                    <strong class="mr-2"><i class="mr-2 fas fa-smile-wink"></i>Temperamento</strong>
+                                    <strong class="mr-2 "><i class="mr-2 fas fa-smile-wink "></i>Temperamento</strong>
                                     <label>{{cat.breeds[0].temperament}}</label>
                                 </li>
                                 <li>
-                                    <strong class="mr-2"><i class="mr-2 fas fa-comment-dots"></i>Descripción</strong>
+                                    <strong class="mr-2 "><i class="mr-2 fas fa-comment-dots "></i>Descripción</strong>
                                     <label>{{cat.breeds[0].description}}</label>
                                 </li>
                                 <li>
-                                    <strong class="mr-2"><i class="mr-2 fas fa-heartbeat"></i>Lifespan</strong>
+                                    <strong class="mr-2 "><i class="mr-2 fas fa-heartbeat "></i>Lifespan</strong>
                                     <label>{{cat.breeds[0].life_span}}</label>
                                 </li>
                                 <li>
-                                    <strong class="mr-2"><i class="mr-2 fas fa-balance-scale-right"></i>Peso Promedio</strong>
+                                    <strong class="mr-2 "><i class="mr-2 fas fa-balance-scale-right "></i>Peso Promedio</strong>
                                     <label>{{cat.breeds[0].weight.metric}}</label>
                                 </li>
                             </ul>
-                            <a href="{{cat.breeds[0].wikipedia_url}}">{{cat.breeds[0].wikipedia_url}}</a>
+                            <a href="{{cat.breeds[0].wikipedia_url}} ">{{cat.breeds[0].wikipedia_url}}</a>
                         </div>
 
                     </div>
