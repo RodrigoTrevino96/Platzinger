@@ -4,7 +4,7 @@
             <div class="row m-3">
 
                 <div class="col-md-auto mb-3">
-                    <div class="avatar-frame avatar-frame--online">
+                    <div *ngIf="currentUser" class="avatar-frame avatar-frame--{{currentUser.status}}">
                         <img *ngIf="currentUser" [src]="currentUser.avatar||'../../assets/img/generic_avatar.png'" alt="" class="img-fluid avatar-image ">
                     </div>
                 </div>
